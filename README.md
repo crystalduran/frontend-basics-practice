@@ -12,7 +12,7 @@ The practice calendar was made by Pau Zuffinetti.
 - [JS Documentation](https://developer.mozilla.org/es/docs/Web/JavaScript)
 
 ### Challenges 
-- [ ] Simple landing page
+- [x] Simple landing page
 - [ ] Business card
 - [ ] Navigation menu
 - [ ] Contact form

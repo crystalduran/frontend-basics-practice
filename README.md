@@ -14,7 +14,7 @@ The practice calendar was made by Pau Zuffinetti.
 ### Challenges 
 - [x] Simple landing page
 - [x] Business card
-- [ ] Navigation menu
+- [x] Navigation menu
 - [ ] Contact form
 - [ ] Pricing/plans page
 - [ ] Blog

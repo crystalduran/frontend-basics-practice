@@ -1,0 +1,61 @@
+<!-- Formulario de contacto
+Arma un formulario de contacto con campos de texto, mail y un botón para enviar.
+Usar 'label' e 'input' correctamente para mejorar la accesibilidad. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact form</title>
+    <link rel="stylesheet" href="../css/day4.css">
+</head>
+
+<body>
+    <header class="menu">
+        <nav>
+            <a href="/" class="title-app">
+                <p>Wellness360</p>
+            </a>
+            <a href="https://icons8.com/"><img src="../assets/icons8-fitness-64.png" alt="Fitness icon by icons8"
+                    width="60" height="60" /></a>
+        </nav>
+    </header>
+    <main>
+        <div class="contact-section">
+            <div class="contact-info">
+                <h2>
+                    We'd love to hear from you!
+                </h2>
+                <p>Share your thoughts or questions by filling out the form below. We're here to help you and support
+                    your needs.</p>
+                <img src="../assets/day-4-women.jpg" alt="Women working out" width="400" height="267">
+            </div>
+            <div class="contact-form">
+                <h2>Contact Us</h2>
+                <p>Please fill out the form with your correct personal information.</p>
+                <form>
+                    <div>
+                        <label for="name" class="required">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="required">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="crystal@example.com">
+                    </div>
+                    <div> 
+                        <label for="message" class="required">Message</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

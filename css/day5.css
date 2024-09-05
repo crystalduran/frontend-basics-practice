@@ -1,0 +1,124 @@
+html, body {
+    border: 0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    background-color: #BFD7E0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: col;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+section {
+    text-align: center;
+}
+
+section h1 {
+    font-size: 32px;
+    color: #142229 ;
+    margin-bottom: 5px;
+}
+
+section h4 {
+    font-size: 15px;
+    font-weight: lighter;
+    color: #4a606d  ;
+}
+
+.plans-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    color: #142229;
+    margin: 50px 40px;
+}
+
+.plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px;
+    margin: 10px 20px;
+    background-color: #f1f6f8;
+    border-color: #577180;
+    border-width: thin;
+    border-style: solid;
+    border-radius: 6px;
+    text-align: start;
+}
+
+.plan p:nth-of-type(1) {
+    font-size: 18px;
+    font-weight: bold; 
+    color: #2e404b;
+}
+
+.plan p:nth-of-type(2) {
+    font-size: 28px; 
+    font-weight: bold; 
+    margin: 6px 0;
+}
+
+.plan p:nth-of-type(3) {
+    font-size: 14px; 
+    color: #7a8992;
+    margin-bottom: 10px;
+}
+
+.plan:nth-child(2) {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.pricing-features {
+    list-style: none;
+    padding: 0;
+    column-gap: 30px;
+    margin-bottom: 50px;
+    flex-grow: 1; /* Para que ocupe el espacio restante si el contenido es menor */
+}
+  
+.pricing-features li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+  
+.check-icon {
+    color: #142229;
+    margin-right: 10px;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 20px 0; 
+}
+
+button {
+    background-color: #142229;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: 6px;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px 20px;
+    margin-top: auto; 
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    width: 100%;
+}
+
+button:hover {
+  background-color: #577180;
+}
+

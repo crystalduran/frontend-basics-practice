@@ -1,0 +1,174 @@
+body {
+    background-color: #f5f3fd;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+
+.libre-baskerville-bold {
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.title-company {
+    font-size: 30px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #f5f3fd;
+}
+
+nav a {
+    text-decoration: none;
+    color: #2B2157;
+}
+  
+.title {
+    flex: 0 0 auto; /* El título toma solo el espacio necesario */
+}
+  
+.nav-info {
+    flex: 1; /* El div nav-info ocupa el espacio restante */
+    display: flex;
+    justify-content: flex-end; /* Alinea los enlaces hacia la derecha */
+    align-items: center;
+}
+  
+.nav-info a {
+    margin-left: 40px; 
+    font-size: 20px;
+}
+
+button {
+    background-color: #4B4494;
+    font-family: "Libre Baskerville", serif;
+    border: none;
+    color: #f5f3fd;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.blog-anchor {
+    text-decoration: underline; /* Muestra la raya */
+    text-decoration-color: #AC9DF2; /* Color de la raya */
+    text-underline-offset: 10px; /* Aumenta la separación entre el texto y la raya */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    padding: 0 40px;
+}
+
+main h1 {
+    font-size: 28px;
+    color: #2B2157;
+    margin-bottom: 30px;
+}
+
+.blog-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 15px;
+    margin-left: 10px;
+    margin-bottom: 40px;
+}
+
+section article {
+    padding: 20px 40px;
+    margin-top: 20px;
+}
+
+article h3 {
+    font-size: 18px;
+    padding-right: 30px; 
+    color: #15102b;
+}
+
+article img {
+    border-radius: 6px;
+}
+
+article p {
+    color: #565070;
+    padding-right: 30px; 
+    font-size: 18px;
+}
+
+article time {
+    color:#565070;
+    font-weight: 600;
+}
+
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.continue-anchor {
+    color: #4B4494;
+    text-decoration: underline; /* Muestra la raya */
+    text-decoration-color: #AC9DF2; /* Color de la raya */
+    text-underline-offset: 10px; /* Aumenta la separación entre el texto y la raya */
+    font-weight: 600;
+}
+
+footer {
+    background-color: #15102b;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #D5C8FA;
+
+}
+
+footer aside {
+    background-color: #15102b;
+    text-align: center;
+}
+
+footer h3 {
+    font-size: 25px;
+    padding-bottom: 5px;
+}
+
+footer nav {
+    background-color: #15102b;
+}
+
+.social-icons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 30px;
+    cursor: pointer;
+}

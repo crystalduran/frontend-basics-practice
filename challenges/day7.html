@@ -1,0 +1,30 @@
+<!-- Reloj digital Crea un reloj digital que muestre la hora actual y se actualice cada segundo. -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reloj Digital</title>
+    <link rel="stylesheet" href="../css/day7.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <p id="digital-clock"></p>
+    </main>
+    <script>
+        function updateDateTime() {
+            const today = new Date();
+            const now = today.toLocaleTimeString('en-US');
+            document.getElementById('digital-clock').innerHTML = now;
+        }
+
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+
+</html>

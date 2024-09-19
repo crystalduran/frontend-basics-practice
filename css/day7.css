@@ -1,0 +1,21 @@
+body {
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    background-color: black;
+    color: white;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+p {
+    font-size: 40px;
+    border: 1px solid rgb(11, 7, 29);
+    background-color: rgb(11, 7, 29, 0.5);
+    padding: 40px;
+    text-shadow: #fff 1px 0 8px;
+}

@@ -19,7 +19,7 @@ The practice calendar was made by Pau Zuffinetti.
 - [x] Pricing/plans page
 - [x] Blog
 - [x] Digital clock
-- [ ] To-do list
+- [x] To-do list
 - [ ] Simple calculator
 - [ ] Image gallery
 - [ ] Recipe page

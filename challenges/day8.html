@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 8 - To Do List</title>
+    <link rel="stylesheet" href="../css/day8.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="#">To Do List</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="inputContainer">
+                <label for="task">Enter a task </label>
+                <input type="text" id="task" name="task" />
+                <button id="button-add-task" onclick="addTask()">Add</button>
+            </div>
+            <div id="containerTasksListEmpty">
+            </div>
+            <div id="containerTasksList">
+            </div>
+        </section>
+        <aside>
+            <h2>Task Overview</h2>
+            <div class="overview">
+                <div class="taskContainer">
+                    <p>Tasks completed</p>
+                    <p id="completedTasks" class="circle">0</p>
+                </div>
+                <div class="taskContainer">
+                    <p>Tasks pending</p>
+                    <p id="pendingTasks" class="circle">0</p>
+                </div>
+                <div class="taskContainer">
+                    <p>Total tasks</p>
+                    <p id="totalTasks" class="circle">0</p>
+                </div>
+            </div>
+            <div>
+                <h2>Today's date </h2>
+                <p id="date"></p>
+            </div>
+
+            <div class="motivationContainer">
+                <h2>ദ്ദി(˵ •̀ ᴗ - ˵ ) ✧</h2>
+                <p>Keep going, you're doing great.</p>
+            </div>
+        </aside>
+    </main>
+
+    <script>
+        const date = new Date();
+        const opciones = { year: 'numeric', month: 'long', day: 'numeric' };
+        const dateFormatted = date.toLocaleDateString('en-US', opciones); // desired format (Month Day, Year)
+
+        document.getElementById('date').textContent = dateFormatted;
+
+        // function to fetch the task list from localStorage
+        let getTaskList = () => {
+            /*
+                localStorage.getItem(<key>) use for fetching data from local-storage.
+            */
+            return JSON.parse(localStorage.getItem('taskList'));
+        };
+
+        // function to check if an item exists in the task list
+        let findItemInTaskList = (data, item) => {
+            if (data.indexOf(item) !== -1) {
+                return data[item];  // return the item if it exists
+            }
+            return false;
+        };
+
+
+        // function to get data from localStorage
+        let getData = (item = null) => {
+            let data = getTaskList();  
+            if (data) {
+                if (item) {
+                    return findItemInTaskList(data, item);  
+                }
+                return data;  // rturn the entire task list if no item is specified
+            }
+            return false;  
+        }
+
+        // function to send the data to localStorage
+        let setData = (item) => {
+            if (getData(item) != false) {
+                alert("This item is already in the list");
+            } else {
+                let data = getData(); // get data from the localStorage to set the new task last
+                data = (data != false) ? data : [];
+                data.push(item);
+                data = JSON.stringify(data);
+                /*
+                    localStorage.setItem(key, value) use for insert or set item into local-storage in key-value pair.
+                */
+                localStorage.setItem('taskList', data);
+            }
+        }
+
+        let updateTaskCount = () => {
+            let data = getData();
+            let taskTotal = data.length;
+            document.getElementById('totalTasks').textContent = taskTotal;
+        }
+
+        let displayTaskList = () => {
+            let html = ``;
+            let data = getData();
+            if (data) {
+                html += `<ul>`;
+                data.forEach((value, index) => {
+                    html += `<li><input type="checkbox" id="task${index}" name="task${index}"><label for="task${index}">${value}</label></li>`;
+                });
+                document.getElementById('containerTasksList').innerHTML = html;
+                containerTasksListEmpty.style.display = 'none';
+                updateTaskCount();
+            }
+            else {
+                containerTasksListEmpty.style.display = 'block';
+                html += `<p>You don't have any tasks.</p>
+                <p>'⎚⩊⎚' -✧</p>`;
+                document.getElementById('containerTasksListEmpty').innerHTML = html;
+            }
+        }
+
+        let addTask = () => {
+            let task = document.getElementById('task').value;
+            if (task != '') {
+                setData(task);
+                document.getElementById('task').value = '';
+                displayTaskList();
+            }
+        }
+        displayTaskList();
+
+        // function to count checkboxes according to the condition (checked or unchecked)
+        function countCheckboxes(checked = true) {
+            return document.querySelectorAll(`input[type="checkbox"]${checked ? ':checked' : ':not(:checked)'}`).length;
+        }
+
+        // function to update the count of completed and pending tasks
+        function updateTaskCounts() {
+            document.getElementById('completedTasks').textContent = countCheckboxes(true);  // Contar marcados
+            document.getElementById('pendingTasks').textContent = countCheckboxes(false);  // Contar no marcados
+        }
+
+        // this code is executed after the DOM is loaded.
+        window.onload = function () {
+            // adding 'onclick' events to each checkbox to update the counters
+            document.querySelectorAll('input[type="checkbox"]').forEach(i => {
+                i.onclick = () => updateTaskCounts();
+            });
+
+            // this function is called here in order to display initial counts
+            updateTaskCounts();
+        };
+    </script>
+</body>
+
+</html>

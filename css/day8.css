@@ -1,0 +1,178 @@
+body {
+    background-color: #FFF9EC;
+    font-family: "Inria Sans", sans-serif;
+}
+
+header {
+    background-color: #FEFCFB;
+    border: 2px solid #221D23;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #221D23;
+    font-weight: bold;
+    font-size: 32px;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    column-gap: 10px;
+}
+
+section {
+    background-color: #FEFCFB;
+    border: 2px solid #221D23;
+    flex-basis: 70%;
+    border-radius: 3px;
+    padding: 20px;
+}
+
+aside {
+    background-color: #FEFCFB;
+    border: 2px solid #221D23;
+    flex-basis: 30%;
+    border-radius: 3px;
+    text-align: center;
+}
+
+.inputContainer {
+    margin-top: 10px;
+}
+
+.inputContainer label{
+    font-size: 20px;
+    color: #5a5a5a;
+    margin-right: 5px;
+}
+
+input[type=text] {
+    width: 75%;
+    border: 1px solid #495057;
+    padding: 7px 5px;
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+button {
+    font-size: 16px;
+    border: 1px solid #495057;
+    padding: 7px 30px;
+    background-color: #E78F8E;
+    color: #FEFCFB;
+    cursor: pointer;
+}
+
+#containerTasksListEmpty {
+    margin: 180px 0;
+}
+
+#containerTasksListEmpty p {
+    color: RGBA(0, 0, 0, .76);
+    text-align: center;
+    align-content: center;
+    font-size: 18px;
+    
+}
+
+.overview {
+    text-align: left;
+    margin: 20px 40px 25px;
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 23px;
+}
+
+#date {
+    font-size: 20px;
+}
+
+.motivationContainer {
+    margin: 40px 0;
+}
+
+.motivationContainer p {
+    font-size: 20px;
+}
+
+.taskContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.circle {
+    color: inherit;
+    display: inline-block;
+    padding: 8px;
+    border-radius: 50%; /* Esto hace que el contenedor sea circular */
+    background-color: transparent; /* Fondo transparente por defecto */
+    border: 2px solid currentColor; /* El borde tendrá el color del texto */
+    text-align: center;
+    min-width: 10px; /* Para asegurarse de que el círculo sea un círculo perfecto */
+    height: 10px; /* Altura para hacer el círculo */
+    line-height: 10px; 
+}
+
+
+#completedTasks {
+    color: #6A994E;
+}
+
+#pendingTasks {
+    color: #BC4749;
+}
+
+#totalTasks {
+    color: #1B4965;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+    padding-top: 20px;
+}
+
+li {
+    margin-bottom: 14px;
+    font-size: 20px;
+    color: #221D23;
+}
+
+input[type=checkbox] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+input[type="checkbox"]:checked + label {
+    color: gray;
+    text-decoration: line-through; /* Aplica la línea de tachado */
+}
+
+/* Mobile */
+@media (max-width: 480px) { 
+    main {
+        display: flex;
+        flex-direction: column;
+        column-gap: 0;
+        row-gap: 10px;
+        margin-top: 10px;
+    }
+
+    input[type=text] {
+        width: 98%;
+        margin-top: 10px;
+    }
+    
+    button {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+}

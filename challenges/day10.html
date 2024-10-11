@@ -1,0 +1,58 @@
+<!-- Armá una galería de imágenes en la que se pueda navegar. Puede ser un carrousel con botones o desplazamiento automático, galería de columnas estilo pinterest, lo que quieras.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10 - Gallery</title>
+    <link rel="stylesheet" href="../css/day10.css">
+</head>
+
+<body>
+    <div class="gallery"></div>
+    <script>
+        const images = [
+            "https://i.pinimg.com/736x/d7/42/16/d74216621fcf400f31f8d95dc5e23d2a.jpg",
+            "https://i.pinimg.com/564x/fa/68/73/fa687358f421d58865b58669b2c74af7.jpg",
+            "https://i.pinimg.com/236x/de/88/22/de8822137737a37b995e6cb2e8c766bc.jpg",
+            "https://i.pinimg.com/736x/5c/96/ee/5c96ee456668fd467e8c89b32136a0b9.jpg",
+            "https://i.pinimg.com/enabled_lo/236x/04/e6/1a/04e61a8d2c540818475928cb4dd15957.jpg",
+            "https://i.pinimg.com/enabled_lo/236x/1a/10/8e/1a108e21d3669594905ffca60aa36363.jpg",
+            "https://i.pinimg.com/236x/85/20/c4/8520c4f152f281d2334580fb15a0b0a1.jpg",
+            "https://i.pinimg.com/736x/2b/1b/af/2b1baf7c3587f3bcf4ccec355b02fdc3.jpg",
+            "https://i.pinimg.com/474x/73/17/27/7317270d3efcb24fdfc5a964ec5798c7.jpg",
+            "https://i.pinimg.com/236x/7d/b6/28/7db62858c96cb857a14eab89e6d16a8a.jpg",
+            "https://i.pinimg.com/236x/8c/4a/bb/8c4abb794814271acec574086aacd9c6.jpg",
+            "https://i.pinimg.com/474x/35/cb/b8/35cbb834fdc2c38620953c9cf1a00167.jpg",
+            "https://i.pinimg.com/474x/c5/91/03/c5910346558d15f9da9c420ead9bd146.jpg",
+            "https://i.pinimg.com/enabled_lo/474x/eb/59/7e/eb597e5ec5a7f91a25558aeeaf4109a5.jpg",
+            "https://i.pinimg.com/enabled_lo/236x/bd/dd/e6/bddde6cca7919fb49476623721dcc792.jpg",
+            "https://i.pinimg.com/236x/e5/ad/80/e5ad80cc49d7ab7e3737981ba237d31a.jpg",
+            "https://i.pinimg.com/enabled_lo/236x/dc/7b/83/dc7b83c49f007893ffdc4fa74f24a6fb.jpg",
+            "https://i.pinimg.com/enabled_lo/236x/37/94/2e/37942e0fb36461b448bd4c5a577eaabf.jpg",
+            "https://i.pinimg.com/736x/e0/8f/38/e08f383e36cd07b9d1ddb03d4c45e2b7.jpg",
+            "https://i.pinimg.com/enabled_lo/736x/ec/ad/66/ecad6690bd9d70f15846cf69c2514c9a.jpg",
+            "https://i.pinimg.com/236x/1e/0b/d9/1e0bd99ca68b2ec97cf90d082a679ddf.jpg",
+            "https://i.pinimg.com/564x/94/ea/c9/94eac931d4163f38bdb74d1fefc57476.jpg",
+            "https://i.pinimg.com/enabled_lo/236x/70/15/dc/7015dce783902386c540dcd84dab425d.jpg",
+            "https://i.pinimg.com/474x/6e/2f/e9/6e2fe9de3b2da5d7c70ac371131dcdec.jpg",
+            "https://i.pinimg.com/236x/a6/e3/2d/a6e32d6514653bc6757be7e5f26723a6.jpg"
+        ];
+
+        const gallery = document.querySelector('.gallery');
+
+        images.forEach(src => {
+            const item = document.createElement('div');
+            item.classList.add('gallery-item');
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = 'Gallery image';
+            item.appendChild(img);
+            gallery.appendChild(item);
+        });
+    </script>
+</body>
+
+</html>

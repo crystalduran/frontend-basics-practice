@@ -21,7 +21,7 @@ The practice calendar was made by Pau Zuffinetti.
 - [x] Digital clock
 - [x] To-do list
 - [x] Simple calculator
-- [ ] Image gallery
+- [x] Image gallery
 - [ ] Recipe page
 - [ ] Number guessing game
 - [ ] CSS animation

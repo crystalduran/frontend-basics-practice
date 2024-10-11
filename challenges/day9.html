@@ -1,0 +1,73 @@
+<!-- Diseñá una calculadora que pueda hacer operaciones básicas como sumar, restar, multiplicar y dividir. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="../css/day9.css">
+</head>
+
+<body>
+    <main>
+        <div id="display">
+            <p id="history"></p>
+            <input type="text" name="result" id="result">
+        </div>
+        <hr>
+        <div class="keys">
+            <p class="btn" data-value="7">7</p>
+            <p class="btn" data-value="8">8</p>
+            <p class="btn" data-value="9">9</p>
+            <p class="btn operations" data-value="/">/</p>
+            <p class="btn" data-value="4">4</p>
+            <p class="btn" data-value="5">5</p>
+            <p class="btn" data-value="6">6</p>
+            <p class="btn operations" data-value="-">-</p>
+            <p class="btn" data-value="1">1</p>
+            <p class="btn" data-value="2">2</p>
+            <p class="btn" data-value="3">3</p>
+            <p class="btn operations" data-value="+">+</p>
+            <p class="btn" data-value="0">0</p>
+            <p class="btn" data-value=".">.</p>
+            <p class="btn-equal"> ↩</p>
+            <p class="btn operations" data-value="*">*</p>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let screen = document.querySelector('#result');
+            let history = document.querySelector('#history');
+            let buttons = document.querySelectorAll('.btn');
+            let equal = document.querySelector('.btn-equal');
+
+            buttons.forEach(function (button) {
+                button.addEventListener('click', function (e) {
+                    let value = e.target.dataset.value;
+                    if (value !== undefined) {
+                        screen.value += value;
+                    }
+                });
+            });
+
+            equal.addEventListener('click', function (e) {
+                if (screen.value === '') {
+                    screen.value = "Please enter";
+                } else {
+                    try {
+                        let answer = eval(screen.value);
+                        history.innerHTML = screen.value;
+                        screen.value = answer;
+                    } catch (error) {
+                        screen.value = "Error";
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

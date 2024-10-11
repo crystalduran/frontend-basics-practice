@@ -20,7 +20,7 @@ The practice calendar was made by Pau Zuffinetti.
 - [x] Blog
 - [x] Digital clock
 - [x] To-do list
-- [ ] Simple calculator
+- [x] Simple calculator
 - [ ] Image gallery
 - [ ] Recipe page
 - [ ] Number guessing game

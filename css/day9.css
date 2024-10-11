@@ -1,0 +1,68 @@
+:root {
+    --wenge: #534B52;
+    --sea-salt: #F8F8F8;
+    --byzantium: #72195A;
+    --taupe: #4C453E;
+}
+
+body {
+    background-color: var(--wenge);
+    align-content: center;
+    justify-content: center;
+    font-family: Tahoma, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+}
+
+main {
+    background-color: var(--sea-salt);
+    margin: 30px 150px;
+    border-radius: 20px;
+    padding: 20px 40px;
+    width: 300px;
+    box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
+}
+
+#display {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#result {
+    color: black;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 0;
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-family: inherit; 
+    padding: 0;
+    outline: none; 
+    color: inherit; 
+    display: block; 
+    box-sizing: border-box; 
+    text-align: right;
+}
+
+#history {
+    color: var(--taupe);
+    font-size: 20px;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 60px;
+    font-size: 28px;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.operations {
+    color: var(--byzantium);
+}

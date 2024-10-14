@@ -3,11 +3,11 @@
 body {
     padding: 0;
     margin: 0;
-    background-color:#73AD8D;
+    background-color:#F1F1F1;
 }
 
 .menu {
-    background-color: #17483B;
+    background-color: #513b56;
     margin: 0;
     padding: 0;
     box-sizing: border-box; 
@@ -16,20 +16,27 @@ body {
 nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
-    padding: 4px 8px;
-    gap: 2rem; /* 32px */
+    padding: 10px 8px;
+    row-gap: 32px;
 }
+
 
 a {
     text-decoration: none;
 }
 
 .title-app {
-    color: #A4CFC0;
+    margin-left: 40px;
+    color: #fcfcfc;
     font-size: 25px;
     font-weight: bold;
+    margin-right: 10px;
+}
+
+.wellness-360 {
+    color: #f1f1f1; 
 }
 
 .contact-section {
@@ -38,12 +45,9 @@ a {
     justify-content: center;
     column-gap: 30px;
     line-height: 30px;
-    background-color: #daede6;
-    color: #17483B;
-    margin: 40px 60px;
+    color: #525174;
+    margin: 20px 60px;
     padding: 30px 40px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 6px;
 }
 
 .contact-section img {
@@ -53,6 +57,7 @@ a {
 .contact-section h2 {
     font-size: 30px;
     margin-bottom: 10px; 
+    color: #26172A;
 }
 
 .contact-section p {
@@ -85,7 +90,7 @@ label.required::after {
     content: "*";
     color: red;
     margin-left: 5px;
-  }
+}
 
 input[type="text"],
 input[type="email"],
@@ -97,9 +102,9 @@ textarea {
 }
 
 input[type=submit] {
-    background-color: #17483B;
+    background-color: #513b56;
     border: none;
-    color: #A4CFC0;
+    color: #fcfcfc;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+    <link rel="shortcut icon" href="../assets/day-12-icon.gif" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Silkscreen:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/day12.css">
+    <script src="../scripts/canvas-confetti.js"></script>
+</head>
+
+<body id="confetti-container">
+    <header>
+        <h1 class="silkscreen-bold">GUESS THE <span>NUMER</span></h1>
+    </header>
+    <main class="roboto-mono">
+        <section class="input-section">
+            <p>Try to guess the number, choose a number between 1 and 100. You have a limit of 3 attempts!</p>
+            <div class="input-container">
+                <input type="text" name="inputNumber" id="inputNumber" placeholder="Enter the number here, e.g: 40">
+                <button id="guessBtn">Guess</button>
+            </div>
+        </section>
+        <section id="results" class="results-section" style="display: none;">
+            <p class="attempt">Attempt <span id="currentAttempt">0</span> of 3</p>
+            <div class="summary-container">
+                <p class="summary-title">Feedback</p>
+                <ol id="results-ol"></ol>
+            </div>
+            <div class="button-container">
+                <button id="resetBtn" style="display: none;">Play Again</button>
+            </div>
+        </section>
+    </main>
+    <script>
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let attempts = 0;
+        let actualNumber;
+        let maxAttempts = 3;
+
+        // DOM elementss
+        const inputNumber = document.getElementById('inputNumber');
+        inputNumber.value = '';
+        const guessBtn = document.getElementById('guessBtn');
+        const resultsOl = document.getElementById('results-ol');
+        const resetBtn = document.getElementById('resetBtn');
+        const results = document.getElementById('results');
+        const currentAttempt = document.getElementById('currentAttempt');
+
+        //Event Listener for input and button
+        guessBtn.addEventListener('click', handleGuess);
+        inputNumber.addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                handleGuess();
+            };
+        });
+
+        function handleGuess() {
+            actualNumber = parseInt(inputNumber.value);
+
+            if (isNaN(actualNumber) || actualNumber < 1 || actualNumber > 100) {
+                alert('Please enter a valid number, between 1 and 100.');
+                return;
+            }
+
+            results.style.display = 'block';
+            attempts++;
+            currentAttempt.textContent = attempts;
+
+            const li = document.createElement('li');
+
+            if (actualNumber === secretNumber) {
+                li.textContent = "Congratulations! You guessed the number.";
+                li.style.color = 'green';
+                resultsOl.appendChild(li);
+                startConfetti();
+                resetBtn.style.display = 'inline-block';
+                guessBtn.disabled = true;
+                inputNumber.disabled = true;
+                return;
+            }
+
+            if (attempts < maxAttempts) {
+                if (actualNumber > secretNumber) {
+                    li.textContent = "Too high! Try a lower number.";
+                    li.style.color = 'orange';
+                } else {
+                    li.textContent = "Too low! Try a higher number.";
+                    li.style.color = 'orange';
+                }
+                resultsOl.appendChild(li);
+            }
+
+            if (attempts === maxAttempts && actualNumber !== secretNumber) {
+                li.textContent = `You have lost. The number was ${secretNumber}. Try again!`;
+                li.style.color = 'red';
+                resultsOl.appendChild(li);
+                resetBtn.style.display = 'inline-block';
+                guessBtn.disabled = true;
+                inputNumber.disabled = true;
+            }
+        }
+
+        resetBtn.addEventListener('click', function () {
+            attempts = 0;
+            secretNumber = Math.floor(Math.random() * 100) + 1;
+            inputNumber.value = '';
+            resultsOl.innerHTML = '';
+            results.style.display = 'none';
+            resetBtn.style.display = 'none';
+            guessBtn.disabled = false;
+            inputNumber.disabled = false;
+        });
+
+
+        function startConfetti() {
+            const container = document.getElementById('confetti-container');
+
+            // Duration for which the confetti will fall
+            const totalDuration = 5000; // 5 seconds total
+            const stopCreatingAt = totalDuration - 1000; // Stop creating confetti 1 second before the end
+
+            let lastCreationTime = Date.now();
+
+            const interval = setInterval(() => {
+                // Create confetti only if the time has passed before the stopping point
+                if (Date.now() - lastCreationTime < stopCreatingAt) {
+                    // Create the confetti element
+                    const confetti = document.createElement('div');
+                    confetti.classList.add('confetti');
+
+                    // Randomize the initial position and animation
+                    confetti.style.left = `${Math.random() * 100}%`;
+                    confetti.style.animationDuration = `${Math.random() * 2 + 2}s`; // Random duration between 2 and 4s
+                    confetti.style.animationDelay = `${Math.random() * 2}s`; // Random delay before starting
+
+                    // Add the confetti to the container
+                    container.appendChild(confetti);
+
+                    // Remove the confetti after its animation completes (after 5 seconds)
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000); // Remove after 5 seconds
+                }
+
+                // Stop creating new confetti once we pass the cutoff time
+                if (Date.now() - lastCreationTime >= stopCreatingAt) {
+                    clearInterval(interval);
+                }
+
+            }, 50);
+        }
+
+
+    </script>
+</body>
+
+</html>

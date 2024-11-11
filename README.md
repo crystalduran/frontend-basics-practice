@@ -44,8 +44,14 @@ The practice calendar was made by Pau Zuffinetti.
 - [x] Image gallery
 <img src="./assets/screenshots/Screenshot-10.png" alt="Screenshot Day 10" width="700" style="margin: 10px 0;"/>
 
-- [ ] Recipe page
-- [ ] Number guessing game
+- [x] Recipe page
+<img src="./assets/screenshots/Screenshot-11.png" alt="Screenshot Day 11" width="700" style="margin: 10px 0;"/>
+
+- [x] Number guessing game
+<img src="./assets/screenshots/Screenshot-12-1.png" alt="Screenshot Day 12" width="700" style="margin: 10px 0;"/>
+<img src="./assets/screenshots/Screenshot-12-2.png" alt="Screenshot Day 12" width="700" style="margin: 10px 0;"/>
+<img src="./assets/screenshots/Screenshot-12-3.png" alt="Screenshot Day 12" width="700" style="margin: 10px 0;"/>
+
 - [ ] CSS animation
 - [ ] Login page
 - [ ] Currency converter

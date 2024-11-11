@@ -13,15 +13,37 @@ The practice calendar was made by Pau Zuffinetti.
 
 ### Challenges 
 - [x] Simple landing page
+<img src="./assets/screenshots/Screenshot-1-1.png" alt="Screenshot Day 1" width="700" style="margin: 10px 0;"/>
+<img src="./assets/screenshots/Screenshot-1-2.png" alt="Screenshot Day 1" width="700" style="margin: 10px 0;"/>
+
 - [x] Business card
+<img src="./assets/screenshots/Screenshot-2.png" alt="Screenshot Day 2" width="700" style="margin: 10px 0;"/>
+  
 - [x] Navigation menu
+<img src="./assets/screenshots/Screenshot-3.png" alt="Screenshot Day 3" width="700" style="margin: 10px 0;"/>
+
 - [x] Contact form
+<img src="./assets/screenshots/Screenshot-4.png" alt="Screenshot Day 4" width="700" style="margin: 10px 0;"/>
+    
 - [x] Pricing/plans page
+<img src="./assets/screenshots/Screenshot-5.png" alt="Screenshot Day 5" width="700" style="margin: 10px 0;"/>
+
 - [x] Blog
+<img src="./assets/screenshots/Screenshot-6.png" alt="Screenshot Day 6" width="700" style="margin: 10px 0;"/>
+
 - [x] Digital clock
+<img src="./assets/screenshots/Screenshot-7.png" alt="Screenshot Day 7" width="700" style="margin: 10px 0;"/>
+
 - [x] To-do list
+<img src="./assets/screenshots/Screenshot-8-1.png" alt="Screenshot Day 8" width="700" style="margin: 10px 0;"/>
+<img src="./assets/screenshots/Screenshot-8-2.png" alt="Screenshot Day 8" width="700" style="margin: 10px 0;"/>
+
 - [x] Simple calculator
+<img src="./assets/screenshots/Screenshot-9.png" alt="Screenshot Day 9" width="700" style="margin: 10px 0;"/>
+
 - [x] Image gallery
+<img src="./assets/screenshots/Screenshot-10.png" alt="Screenshot Day 10" width="700" style="margin: 10px 0;"/>
+
 - [ ] Recipe page
 - [ ] Number guessing game
 - [ ] CSS animation
